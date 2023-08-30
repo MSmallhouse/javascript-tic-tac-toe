@@ -18,6 +18,9 @@ const gameboard = (() => {
     this.tiles = document.getElementsByClassName("grid-box");
     Array.from(tiles).forEach((element) => {
         element.addEventListener("click", () => {
+            if (element.innerHTML) {
+                return;
+            }
             element.textContent = playGame.player.marker;
 
             if (playGame.player === player1) {
